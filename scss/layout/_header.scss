@@ -3,35 +3,46 @@
 @use "../utils/varibles" as var;
 @use "../layout/flex" as flx;
 @use "../components/buttons" as comb;
+
 header {
   padding: 20px 0;
+
   nav {
     @include flx.flex(space-between, center, 10);
+
     .nav_menu {
       width: 100%;
+
       @media (max-width: 960px) {
         display: none;
       }
+
       @include flx.flex(space-between, center, 10);
+
       .nav_katalog {
         button {
-          @include comb.btn(10px 15px 10px 15px, 5px, 0);
+          @include comb.btn(10px 15px, 5px, 0);
           border: none;
           background-color: rgb(206, 204, 255);
           color: var.$light-purple;
+
           .nav_katalog_text {
             @include flx.flex(0, center, 15);
+
             .nav_katalog_icon {
               @include flx.flex(0, center, 2);
               flex-direction: column;
+
               .nav_katalog_icon_line {
                 @include mix.width2(14, 1.5);
                 background-color: var.$light-purple;
               }
+
               .nav_katalog_icon_line_small {
                 @include mix.width2(16, 1.5);
                 background-color: var.$light-purple;
               }
+
               .nav_katalog_icon_quadrilateral {
                 @include mix.width2(20, 15);
                 border: 2px solid var.$light-purple;
@@ -41,19 +52,18 @@ header {
           }
         }
       }
+
       .nav_menu_search {
         @include flx.flex(0, center, 0);
         @include comb.btn(0, 5px, 1px solid var.$light-gray);
         width: 100%;
         transition: 0.5s;
+
         img {
-          @include comb.btn(
-            7px 25px 7px 25px,
-            0 5px 5px 0,
-            1px solid var.$light-gray
-          );
+          @include comb.btn(7px 25px, 0 5px 5px 0, 1px solid var.$light-gray);
           background-color: var.$light-gray;
         }
+
         input {
           @include comb.btn(0 0 0 20px, 5px 0 0 5px, 1px solid var.$cool-gray);
           font-size: 17px;
@@ -63,54 +73,43 @@ header {
           transition: 0.5s;
         }
       }
-      .nav_entry {
+
+      .nav_entry,
+      .nav_selected,
+      .nav_cart {
         @include comb.btn(10px, 6px, 0);
         @include flx.flex(0, center, 10);
-        transition: 0.5;
+        transition: 0.5s;
+
         @media (max-width: 1350px) {
           span {
             display: none;
           }
         }
-      }
-      .nav_entry:hover {
-        background-color: var.$cool-gray;
+
+        &:hover {
+          background-color: var.$cool-gray;
+        }
       }
 
       .nav_selected {
-        @include flx.flex(0, center, 10);
         border-radius: 6px;
         padding: 10px;
-        transition: 0.5;
-        @media (max-width: 1350px) {
-          span {
-            display: none;
-          }
-        }
       }
-      .nav_selected:hover {
-        background-color: var.$cool-gray;
-      }
+
       .nav_cart {
-        @include flx.flex(0, center, 10);
         border-radius: 6px;
         padding: 10px;
-        transition: 0.5;
-        @media (max-width: 1350px) {
-          span {
-            display: none;
-          }
-        }
-      }
-      .nav_cart:hover {
-        background-color: var.$cool-gray;
       }
     }
+
     .nav_menu_2 {
       width: 100%;
+
       @media (min-width: 960px) {
         display: none;
       }
+
       .nav_menu_2_input {
         @include flx.flex(0, center, 0);
         background-color: var.$cool-gray;
@@ -118,9 +117,11 @@ header {
         border: 1px solid var.$cool-gray;
         border-radius: 10px;
         width: 100%;
+
         img {
-          padding: 0 10px 0 10px;
+          padding: 0 10px;
         }
+
         input {
           font-size: 16px;
           background-color: var.$cool-gray;
@@ -131,6 +132,7 @@ header {
         }
       }
     }
+
     .media_nav_menu {
       position: fixed;
       z-index: 999;
@@ -140,118 +142,54 @@ header {
       @include flx.flex(space-between, 0, 0);
       border-top: 1px solid rgb(157, 159, 168);
       padding: 10px 20px;
+
       @media (min-width: 960px) {
         display: none;
       }
-      .home_page {
-        @include flx.flex(0, center, 0);
-        flex-direction: column;
-        color: rgb(157, 159, 168);
-        @media (max-width: 427px) {
-          font-size: 10px;
-        }
-        a {
-          svg {
-            fill: #8b8e99;
-          }
-        }
-      }
-      .home_page:hover span {
-        color: rgb(127, 77, 255);
-      }
-      .home_page:hover svg {
-        fill: rgb(127, 77, 255);
-      }
-      .katalog_page {
-        @include flx.flex(0, center, 0);
-        flex-direction: column;
-        color: rgb(157, 159, 168);
-        @media (max-width: 427px) {
-          font-size: 10px;
-        }
-        a {
-          svg {
-            fill: #8b8e99;
-          }
-        }
-      }
-      .katalog_page:hover span {
-        color: rgb(127, 77, 255);
-      }
-      .katalog_page:hover svg {
-        fill: rgb(127, 77, 255);
-      }
-      .cart_page {
-        @include flx.flex(0, center, 0);
-        flex-direction: column;
-        color: rgb(157, 159, 168);
-        @media (max-width: 427px) {
-          font-size: 10px;
-        }
-        a {
-          svg {
-            fill: #8b8e99;
-          }
-        }
-      }
-      .cart_page:hover span {
-        color: rgb(127, 77, 255);
-      }
-      .cart_page:hover svg {
-        fill: rgb(127, 77, 255);
-      }
-      .heart_page {
-        @include flx.flex(0, center, 0);
-        flex-direction: column;
-        color: rgb(157, 159, 168);
-        @media (max-width: 427px) {
-          font-size: 10px;
-        }
-        a {
-          svg {
-            fill: #8b8e99;
-          }
-        }
-      }
-      .heart_page:hover span {
-        color: rgb(127, 77, 255);
-      }
-      .heart_page:hover svg {
-        fill: rgb(127, 77, 255);
-      }
+
+      .home_page,
+      .katalog_page,
+      .cart_page,
+      .heart_page,
       .people_page {
         @include flx.flex(0, center, 0);
         flex-direction: column;
         color: rgb(157, 159, 168);
+
         @media (max-width: 427px) {
           font-size: 10px;
         }
+
         a {
           svg {
             fill: #8b8e99;
           }
         }
-      }
-      .people_page:hover span {
-        color: rgb(127, 77, 255);
-      }
-      .people_page:hover svg {
-        fill: rgb(127, 77, 255);
+
+        &:hover span,
+        &:hover svg {
+          color: rgb(127, 77, 255);
+          fill: rgb(127, 77, 255);
+        }
       }
     }
   }
+
   .bottom_header {
     ul {
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       li {
         display: flex;
         align-items: center;
         gap: 5px;
+
         img {
           width: 30px;
         }
+
         a {
           color: var.$black;
           font-size: 15px;

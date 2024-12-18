@@ -51,7 +51,7 @@ header nav .nav_menu {
   }
 }
 header nav .nav_menu .nav_katalog button {
-  padding: 10px 15px 10px 15px;
+  padding: 10px 15px;
   border-radius: 5px;
   border: 0;
   cursor: pointer;
@@ -101,7 +101,7 @@ header nav .nav_menu .nav_menu_search {
   transition: 0.5s;
 }
 header nav .nav_menu .nav_menu_search img {
-  padding: 7px 25px 7px 25px;
+  padding: 7px 25px;
   border-radius: 0 5px 5px 0;
   border: 1px solid rgb(215, 215, 217);
   cursor: pointer;
@@ -118,7 +118,9 @@ header nav .nav_menu .nav_menu_search input {
   outline: none;
   transition: 0.5s;
 }
-header nav .nav_menu .nav_entry {
+header nav .nav_menu .nav_entry,
+header nav .nav_menu .nav_selected,
+header nav .nav_menu .nav_cart {
   padding: 10px;
   border-radius: 6px;
   border: 0;
@@ -127,49 +129,27 @@ header nav .nav_menu .nav_entry {
   justify-content: 0;
   align-items: center;
   gap: 10px;
-  transition: 0.5;
+  transition: 0.5s;
 }
 @media (max-width: 1350px) {
-  header nav .nav_menu .nav_entry span {
-    display: none;
-  }
-}
-header nav .nav_menu .nav_entry:hover {
-  background-color: rgb(215, 215, 217);
-}
-header nav .nav_menu .nav_selected {
-  display: flex;
-  justify-content: 0;
-  align-items: center;
-  gap: 10px;
-  border-radius: 6px;
-  padding: 10px;
-  transition: 0.5;
-}
-@media (max-width: 1350px) {
-  header nav .nav_menu .nav_selected span {
-    display: none;
-  }
-}
-header nav .nav_menu .nav_selected:hover {
-  background-color: rgb(215, 215, 217);
-}
-header nav .nav_menu .nav_cart {
-  display: flex;
-  justify-content: 0;
-  align-items: center;
-  gap: 10px;
-  border-radius: 6px;
-  padding: 10px;
-  transition: 0.5;
-}
-@media (max-width: 1350px) {
+  header nav .nav_menu .nav_entry span,
+  header nav .nav_menu .nav_selected span,
   header nav .nav_menu .nav_cart span {
     display: none;
   }
 }
+header nav .nav_menu .nav_entry:hover,
+header nav .nav_menu .nav_selected:hover,
 header nav .nav_menu .nav_cart:hover {
   background-color: rgb(215, 215, 217);
+}
+header nav .nav_menu .nav_selected {
+  border-radius: 6px;
+  padding: 10px;
+}
+header nav .nav_menu .nav_cart {
+  border-radius: 6px;
+  padding: 10px;
 }
 header nav .nav_menu_2 {
   width: 100%;
@@ -191,7 +171,7 @@ header nav .nav_menu_2 .nav_menu_2_input {
   width: 100%;
 }
 header nav .nav_menu_2 .nav_menu_2_input img {
-  padding: 0 10px 0 10px;
+  padding: 0 10px;
 }
 header nav .nav_menu_2 .nav_menu_2_input input {
   font-size: 16px;
@@ -219,94 +199,10 @@ header nav .media_nav_menu {
     display: none;
   }
 }
-header nav .media_nav_menu .home_page {
-  display: flex;
-  justify-content: 0;
-  align-items: center;
-  gap: 0px;
-  flex-direction: column;
-  color: rgb(157, 159, 168);
-}
-@media (max-width: 427px) {
-  header nav .media_nav_menu .home_page {
-    font-size: 10px;
-  }
-}
-header nav .media_nav_menu .home_page a svg {
-  fill: #8b8e99;
-}
-header nav .media_nav_menu .home_page:hover span {
-  color: rgb(127, 77, 255);
-}
-header nav .media_nav_menu .home_page:hover svg {
-  fill: rgb(127, 77, 255);
-}
-header nav .media_nav_menu .katalog_page {
-  display: flex;
-  justify-content: 0;
-  align-items: center;
-  gap: 0px;
-  flex-direction: column;
-  color: rgb(157, 159, 168);
-}
-@media (max-width: 427px) {
-  header nav .media_nav_menu .katalog_page {
-    font-size: 10px;
-  }
-}
-header nav .media_nav_menu .katalog_page a svg {
-  fill: #8b8e99;
-}
-header nav .media_nav_menu .katalog_page:hover span {
-  color: rgb(127, 77, 255);
-}
-header nav .media_nav_menu .katalog_page:hover svg {
-  fill: rgb(127, 77, 255);
-}
-header nav .media_nav_menu .cart_page {
-  display: flex;
-  justify-content: 0;
-  align-items: center;
-  gap: 0px;
-  flex-direction: column;
-  color: rgb(157, 159, 168);
-}
-@media (max-width: 427px) {
-  header nav .media_nav_menu .cart_page {
-    font-size: 10px;
-  }
-}
-header nav .media_nav_menu .cart_page a svg {
-  fill: #8b8e99;
-}
-header nav .media_nav_menu .cart_page:hover span {
-  color: rgb(127, 77, 255);
-}
-header nav .media_nav_menu .cart_page:hover svg {
-  fill: rgb(127, 77, 255);
-}
-header nav .media_nav_menu .heart_page {
-  display: flex;
-  justify-content: 0;
-  align-items: center;
-  gap: 0px;
-  flex-direction: column;
-  color: rgb(157, 159, 168);
-}
-@media (max-width: 427px) {
-  header nav .media_nav_menu .heart_page {
-    font-size: 10px;
-  }
-}
-header nav .media_nav_menu .heart_page a svg {
-  fill: #8b8e99;
-}
-header nav .media_nav_menu .heart_page:hover span {
-  color: rgb(127, 77, 255);
-}
-header nav .media_nav_menu .heart_page:hover svg {
-  fill: rgb(127, 77, 255);
-}
+header nav .media_nav_menu .home_page,
+header nav .media_nav_menu .katalog_page,
+header nav .media_nav_menu .cart_page,
+header nav .media_nav_menu .heart_page,
 header nav .media_nav_menu .people_page {
   display: flex;
   justify-content: 0;
@@ -316,17 +212,31 @@ header nav .media_nav_menu .people_page {
   color: rgb(157, 159, 168);
 }
 @media (max-width: 427px) {
+  header nav .media_nav_menu .home_page,
+  header nav .media_nav_menu .katalog_page,
+  header nav .media_nav_menu .cart_page,
+  header nav .media_nav_menu .heart_page,
   header nav .media_nav_menu .people_page {
     font-size: 10px;
   }
 }
+header nav .media_nav_menu .home_page a svg,
+header nav .media_nav_menu .katalog_page a svg,
+header nav .media_nav_menu .cart_page a svg,
+header nav .media_nav_menu .heart_page a svg,
 header nav .media_nav_menu .people_page a svg {
   fill: #8b8e99;
 }
-header nav .media_nav_menu .people_page:hover span {
-  color: rgb(127, 77, 255);
-}
+header nav .media_nav_menu .home_page:hover span, header nav .media_nav_menu .home_page:hover svg,
+header nav .media_nav_menu .katalog_page:hover span,
+header nav .media_nav_menu .katalog_page:hover svg,
+header nav .media_nav_menu .cart_page:hover span,
+header nav .media_nav_menu .cart_page:hover svg,
+header nav .media_nav_menu .heart_page:hover span,
+header nav .media_nav_menu .heart_page:hover svg,
+header nav .media_nav_menu .people_page:hover span,
 header nav .media_nav_menu .people_page:hover svg {
+  color: rgb(127, 77, 255);
   fill: rgb(127, 77, 255);
 }
 header .bottom_header ul {
